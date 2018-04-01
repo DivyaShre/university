@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 26, 2018 at 03:03 PM
+-- Generation Time: Apr 02, 2018 at 01:03 AM
 -- Server version: 5.5.44-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.11
 
@@ -53,8 +53,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `fname` varchar(100) DEFAULT NULL,
   `mname` varchar(100) DEFAULT NULL,
   `lname` varchar(100) DEFAULT NULL,
-  `email` varchar(128) NOT NULL,
-  `mobileNumber` varchar(14) DEFAULT NULL,
+  `emailId` varchar(128) NOT NULL,
+  `mobileNo` varchar(14) DEFAULT NULL,
   `alternateMobile` varchar(14) DEFAULT NULL,
   `password` varchar(100) DEFAULT NULL,
   `type` tinyint(1) DEFAULT NULL COMMENT 'User Type - 0 - Student and 1 - Teacher',
@@ -62,11 +62,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `status` tinyint(4) NOT NULL DEFAULT '0',
   `createdBy` bigint(20) DEFAULT NULL,
   `createdTS` timestamp NULL DEFAULT NULL,
-  `updatedBy` bigint(20) DEFAULT NULL,
+  `updatedBy` bigint(20) DEFAULT '0',
   `updatedTS` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `roleId` (`roleId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 --
 -- Constraints for dumped tables

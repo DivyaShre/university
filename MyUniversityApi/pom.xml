@@ -142,12 +142,6 @@
 			<version>1.11.38</version>
 		</dependency>
 
-		<!-- Spring Data MongoDB TODO : Try using spring boot dependency -->
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-mongodb</artifactId>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -183,6 +177,13 @@
 		  <groupId>com.eclipsesource.j2v8</groupId>
 		  <artifactId>j2v8_win32_x86_64</artifactId>
 		  <version>4.4.0</version>
+		</dependency>
+		
+		<dependency>
+		   <groupId>javax.servlet</groupId>
+		   <artifactId>javax.servlet-api</artifactId>
+		   <version>3.1.0</version>
+		   <scope>provided</scope>
 		</dependency>
 
 		<!-- For Linux/ ubuntu machine -->
