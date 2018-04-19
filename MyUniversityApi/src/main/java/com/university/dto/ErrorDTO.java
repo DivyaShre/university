@@ -3,6 +3,7 @@
  */
 package com.university.dto;
 
+// writing some error code and message to display while encounter error
 public class ErrorDTO {
 	private String errorCode;
 	private String errorMessage;

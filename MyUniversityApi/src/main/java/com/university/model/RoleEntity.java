@@ -6,10 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+// @Entity defines that a class can be mapped to a table
 @Entity
 @Table(name = "role")
 public class RoleEntity {
+/* @Id indicating the member field below is the primary key of current entity
+ * @GeneratedValue is to configure the way of increment of specified column. */
 	@Id
 	@GeneratedValue
 	private long id;

@@ -1,6 +1,7 @@
 package com.university.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,9 +26,9 @@ public class UserEntity {
 	private long roleId;
 	private int status;
 	private long createdBy;
-	private Timestamp createdTS;
+	private Date createdTS;
 	private long updatedBy;
-	private Timestamp updatedTS;
+	private Date updatedTS;
 	
 	public long getId() {
 		return id;
@@ -101,10 +102,10 @@ public class UserEntity {
 	public void setCreatedBy(long createdBy) {
 		this.createdBy = createdBy;
 	}
-	public Timestamp getCreatedTimestamp() {
+	public Date getCreatedTimestamp() {
 		return createdTS;
 	}
-	public void setCreatedTimestamp(Timestamp createdTS) {
+	public void setCreatedTimestamp(Date createdTS) {
 		this.createdTS = createdTS;
 	}
 	public long getUpdatedBy() {
@@ -113,10 +114,10 @@ public class UserEntity {
 	public void setUpdatedBy(long updatedBy) {
 		this.updatedBy = updatedBy;
 	}
-	public Timestamp getUpdatedTimestamp() {
+	public Date getUpdatedTimestamp() {
 		return updatedTS;
 	}
-	public void setUpdatedTimestamp(Timestamp updatedTS) {
+	public void setUpdatedTimestamp(Date updatedTS) {
 		this.updatedTS = updatedTS;
 	}
 }

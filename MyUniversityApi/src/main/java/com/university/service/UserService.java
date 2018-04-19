@@ -1,5 +1,7 @@
 package com.university.service;
 
+import java.util.List;
+
 import com.university.dto.UserDto;
 
 public interface UserService {
@@ -7,7 +9,38 @@ public interface UserService {
 	/**
 	 * Get User Details by UserDto
 	 * @param user
-	 * @return
+	 * @return 
 	 */
 	UserDto getUserDetails(UserDto user);
+	
+	/**
+	 * Save user details
+	 * @param user
+	 * @return
+	 */
+	long saveUserDetails(UserDto user);
+	
+	/**
+	 * 
+	 * @param user
+	 * @return
+	 */
+	
+	int updateUserDetails(UserDto user);
+	
+	/**
+	 * 
+	 * @param user
+	 * @return
+	 */
+
+	int deleteUserDetails(UserDto user);
+
+	/**
+	 * 
+	 * @return
+	 */
+
+	List<UserDto> gettingUserDetails();
+	
 }
