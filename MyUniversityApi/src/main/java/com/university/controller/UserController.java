@@ -133,7 +133,7 @@ public class UserController
 				}		
 	}
 	/**
-	 * 
+	 * Update a user
 	 * @param user
 	 * @param request
 	 * @param response
