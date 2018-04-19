@@ -164,7 +164,7 @@ public class UserController
 			}	
 	}
 	/**
-	 * 
+	 * Delete a user
 	 * @param user
 	 * @param request
 	 * @param response
@@ -194,7 +194,7 @@ public class UserController
 				}	
 	}
 	/**
-	 * 
+	 * get users list
 	 * @return
 	 */
 	@RequestMapping(value = GET, method = RequestMethod.GET)
