@@ -220,7 +220,7 @@ public class UserController
 	 			throw new UNException(env.getProperty(GET_FAILURE_CODE),env.getProperty(GET_FAILURE_MSG),Constants.EMPTY_STRING);
 	 		}	
 	}
-	// we have to write exception handler for user defined exceptions
+
 	@ExceptionHandler(UNException.class)
 	//showing error code and message in ErrorDTO class
 	public ResponseEntity<ErrorDTO> exceptionHandeler(HttpServletRequest req, UNException exception)
