@@ -28,7 +28,6 @@ import com.university.utility.UNException;
 @RequestMapping("/user")
 public class UserController 
 {
-	// Logger is used to make a systematic recording of events, observations or errors
 	private static Logger log = Logger.getLogger(UserController.class);
 	// when request finds /login it will come to LOGIN 
 	private static final String LOGIN = "/login";
