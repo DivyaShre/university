@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlrewrite default-match-type="wildcard">
+   
+    <rule match-type="wildcard">
+        <from>/account/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/dashboard</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/training/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/completedPods</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/detailedprofile</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/trainer/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/addOrgSite</from>
+        <to>/index.html</to>
+    </rule>
+    
+    
+    <rule match-type="wildcard">
+        <from>/manage/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/manage/*/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/manage/*/*/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/timetable/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/termsofuse</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/privacypolicy</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/aboutus</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/contactus</from>
+        <to>/index.html</to>
+    </rule>
+    
+    
+    <rule match-type="wildcard">
+        <from>/siteadmin/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/courselist</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/news/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/news/*/*</from>
+        <to>/index.html</to>
+    </rule>
+     <rule match-type="wildcard">
+        <from>/news/*/*</from>
+        <to>/index.html</to>
+    </rule>
+     <rule match-type="wildcard">
+        <from>/user/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/cloudUser/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/bifurcate/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/industry/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/pods/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/pod/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/pod/*/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+     <rule match-type="wildcard">
+        <from>/jobfeeds/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/org/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/job/*</from>
+        <to>/index.html</to>
+    </rule>
+     <rule match-type="wildcard">
+        <from>/jobs/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/appliedjobs</from>
+        <to>/index.html</to>
+    </rule>
+     <rule match-type="wildcard">
+        <from>/newsfeed/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/basicadmin/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/orgadmin/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/orgadmin/*/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/orgadmin/*/*/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/manageadmin/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/verify/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+     <rule match-type="wildcard">
+        <from>/verifyEmail</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/verifyEmail/*/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+     <rule match-type="wildcard">
+        <from>/podforum</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/createposts</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/manageposts</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/post/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/recommended/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/company/*</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/followingcompanies</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/respostjob</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/learningtrack/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/setPassword</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/available/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/available/*/*/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/getrolelist</from>
+        <to>/index.html</to>
+    </rule>
+    
+    <rule match-type="wildcard">
+        <from>/internal/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/upload/*</from>
+        <to>/index.html</to>
+    </rule>
+     <rule match-type="wildcard">
+        <from>/media/*</from>
+        <to>/index.html</to>
+    </rule>
+     <rule match-type="wildcard">
+        <from>/advance/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/course/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/content/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/test/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/uploadmedia/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/upload/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/followingcompanies/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+        <from>/jobapply/*</from>
+        <to>/index.html</to>
+    </rule>
+    <rule match-type="wildcard">
+       <from>/jobpost/*</from>
+       <to>/index.html</to>
+   </rule>
+   <rule match-type="wildcard">
+       <from>/orgcourse/*</from>
+       <to>/index.html</to>
+   </rule>
+   <rule match-type="wildcard">
+       <from>/jobwishlist/*</from>
+       <to>/index.html</to>
+   </rule>
+   <rule match-type="wildcard">
+       <from>/jobfeeds/*</from>
+       <to>/index.html</to>
+   </rule> 
+   <rule match-type="wildcard">
+       <from>/enrolltocourse/*</from>
+       <to>/index.html</to>
+   </rule> 
+   <rule match-type="wildcard">
+       <from>/usercourse/*</from>
+       <to>/index.html</to>
+   </rule> 
+   <rule match-type="wildcard">
+       <from>/skills/*</from>
+       <to>/index.html</to>
+   </rule>
+   <rule match-type="wildcard">
+       <from>/certificate/*</from>
+       <to>/index.html</to>
+   </rule>
+   <rule match-type="wildcard">
+       <from>/certificate/*</from>
+       <to>/index.html</to>
+   </rule>
+   <rule match-type="wildcard">
+       <from>/certificate/*</from>
+       <to>/index.html</to>
+   </rule>
+   <rule match-type="wildcard">
+       <from>/module/*</from>
+       <to>/index.html</to>
+   </rule>
+   <rule match-type="wildcard">
+       <from>/manageorgs/*</from>
+       <to>/index.html</to>
+   </rule> 
+   <rule match-type="wildcard">
+      <from>/rolemodule/*</from>
+      <to>/index.html</to>
+  </rule> 
+   <rule match-type="wildcard">
+      <from>/jobdesignation/*</from>
+      <to>/index.html</to>
+  </rule> 
+   <rule match-type="wildcard">
+     <from>/lab/*</from>
+     <to>/index.html</to>
+  </rule> 
+  <rule match-type="wildcard">
+     <from>/manageorgsites/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/batch/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/attendance/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/timetable/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/additionalfile/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/managelicense/*</from>
+     <to>/index.html</to>
+  </rule>
+   <rule match-type="wildcard">
+     <from>/licensedetails/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/bulkupload/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/report/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/payment/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/bulkuser/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/coupon/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/podinstaller/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/profile/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/play/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/reports</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/search/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/salesadmin/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/firstlogin/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/customization/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+   <rule match-type="wildcard">
+     <from>/license/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/edithomepage</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/manageskill</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/manageindustry</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/managecertificate</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/videos</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/managejobdesignation</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/managequalification</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/managesecuritymodule</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/managerole</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/merge/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/mergeskill</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/mergecertificate</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/mergeindustry</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/mergejobdesignation</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/managepodinstaller</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/add/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/add/*/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/manageOrganizations</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/manageOrgSites</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/site/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/bulk/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/bulk/*/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/bulkuserenroll/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/manageCoupons</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/createCoupon</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/editCoupon</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/couponDetails</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/clouduser/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/cloudadmin/*</from>
+     <to>/index.html</to>
+  </rule>
+  
+  <rule match-type="wildcard">
+     <from>/synctos3</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/download/*</from>
+     <to>/index.html</to>
+  </rule>
+  <rule match-type="wildcard">
+     <from>/customize/*</from>
+     <to>/index.html</to>
+  </rule>
+</urlrewrite>
