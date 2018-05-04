@@ -1,16 +1,15 @@
 package com.university.service.impl;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.transaction.Transactional;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +20,8 @@ import com.university.model.UserEntity;
 import com.university.service.UserService;
 import com.university.utility.Constants;
 import com.university.utility.UNException;
+
+@PropertySource({"classpath:error.properties"})
 @Service
 public class UserServiceImpl implements UserService {
 	

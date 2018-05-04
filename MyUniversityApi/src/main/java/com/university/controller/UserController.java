@@ -89,7 +89,7 @@ public class UserController
 			catch (UNException un)
 			{
 				log.info(env.getProperty(LOGIN_FAILURE_MSG));
-				throw new UNException(env.getProperty(LOGIN_FAILURE_CODE), env.getProperty(LOGIN_FAILURE_MSG),Constants.EMPTY_STRING);
+				throw new UNException(un.getErrCode(), un.getErrMsg(),Constants.EMPTY_STRING);
 			}
 			catch (Exception e)
 			{
@@ -123,7 +123,7 @@ public class UserController
 		}catch (UNException un) 
 				{
 					log.info(env.getProperty(SAVE_FAILURE_MSG));
-					throw new UNException(env.getProperty(SAVE_FAILURE_CODE),env.getProperty(SAVE_FAILURE_MSG),Constants.EMPTY_STRING);
+					throw new UNException(un.getErrCode(),un.getErrMsg(),Constants.EMPTY_STRING);
 				}
 				catch (Exception e)
 				{
