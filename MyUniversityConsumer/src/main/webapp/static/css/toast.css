@@ -1,0 +1,16 @@
+.toast{
+	color: white;
+    position: absolute;
+    top: 600px;
+    left: 520px;
+    text-align: center;
+    width: 300px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.toast-success{
+	background-color: green;
+}
+.toast-failure{
+	background-color : red;
+}

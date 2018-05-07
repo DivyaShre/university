@@ -8,6 +8,10 @@
 		
 		<!-- common css links --> 
 		<link rel="stylesheet" href="/UniversityConsumer/static/css/utilities.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/login.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/frontpage.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/register.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/toast.css"></link>
 		<!-- end common css links -->
 		
 		<!--  Javascripts Begin -->
@@ -16,6 +20,7 @@
 		<script src="/UniversityConsumer/static/js/helper.js"></script>
 		<script src="/UniversityConsumer/static/js/router.js"></script>
 		<script src="/UniversityConsumer/js/login.js"></script>
+		<script src="/UniversityConsumer/js/register.js"></script>
 		<!-- end Javascripts -->
 		
 		<meta charset="UTF-8">
@@ -32,13 +37,124 @@
     		<h1>Page 2: <%= heading %></h1>
     		<p>Lorem ipsum...</p>
   		</script>-->
+  		
+  		<!-- default hide and when we click login it should show and when we click cancel it should hide-->
 	</head>
 	<body>
-		<h1>This is the welcome page</h1>
-		 <ul>
-		    <li><a href="UniversityConsumer/#">Home</a></li>
-		    <li><a href="UniversityConsumer/#/user/login">Login</a></li>
-		 </ul>
-	     <div id="view"></div>
-	</body>
+	<!-- 		<h1>This is the welcome page</h1>
+			 <ul>
+			    <li><a href="UniversityConsumer/#">Home</a></li>
+			    <li><a href="UniversityConsumer/#/user/login">Login</a></li>
+			 </ul>
+		-->
+		<div id="view"> 
+			<div class="container">
+				<div class="header">
+					<div class="logo">
+						<a href="#">
+							<img src="UniversityConsumer/images/newheader1.jpg" id="img1" alt="VTU | Karnataka" title="VTU">
+						</a>
+					</div>
+					<nav class="navbar navbar-inverse">
+						<div class="container-fluid">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="http://localhost:8081/UniversityConsumer">HOME</a></li>
+								<li><a href="#">USERS</a></li>
+								
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<li><button id="register">Register</button></li>
+								<li><button id="login">Login</button></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+					
+				<div class="content">
+					<img src="UniversityConsumer/images/university.jpg" id="img2" alt="VTU | Karnataka" title="university">
+					<div class="container">
+						<div class="col-sm-3"></div>
+						<div class="col-sm-6">
+							<div class="userinfo">
+								<div class="jumbotron j1">
+									<h3>login</h3>
+									<br>
+									<form>
+										<div class="form-group">
+											<input type="email" class="form-contrl" id="emailval" onblur="validateEmail()" placeholder="Enter email" required="required">
+											<span id="email_msg"></span>
+										</div>
+										<div class="form-group">
+											<input type="password" class="form-control" id="passval" onblur="validatePassword()" placeholder="password" required="required"> 
+											<span id="pass_msg"></span>
+										</div>
+										<label><input type="checkbox" checked="checked" name="remember" >Remember me </label>
+										<button type="submit" onclick="login(); return false;">Login</button>
+										<div class="container c1">
+											<button id="cancel" class="cancelbtn">Cancel</button>
+											<span class="psw"><a href="#">Forgot password?</a></span>
+										</div>
+									</form>
+								</div>
+							</div>
+				
+							<div class="registerinfo">
+								<div class="jumbotron j2">
+									<form>
+										<div class="regheader"><h2>Register</h2></div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="firstName" onblur="validateFn()" name="first_name" placeholder="First Name" required="required">
+											<span id="fn_msg"></span>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" name="middle_name" id="middleName" onblur="validateMn()" placeholder="Middle Name">
+											<span id="mn_msg"></span>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" name="last_name" id="lastName" onblur="validateLn()" placeholder="Last Name" required="required">
+											<span id="ln_msg"></span>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" name="email" id="regemailval" onblur="validateRegEmail()" placeholder="Email" required="required">
+											<span id="regemail_msg"></span>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" name="password" id="regpassval" onblur="validateRegPassword()" placeholder="password" required="required">
+											<span id="regpass_msg"></span>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" name="confirm_password" id="confpassval" onblur="validateConfPassword()" placeholder="confirm password" required="required">
+											<span id="confpass_msg"></span>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" name="mobile_no" id="mobileNo" onblur="validateMobile()" placeholder="Mobile no" required="required">
+											<span id="mno_msg"></span>
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" name="alternate_mobile" id="altMobileNo" onblur="validateAlternateMobile()" placeholder="alternate mobile no">
+											<span id="ano_msg"></span>
+										</div>
+										<div class="form-group">
+											<label class="checkbox-inline"><input type="checkbox" required="required">I accept the <a href="#"> Terms of use</a> &amp; <a href="#">Privacy Policy</a></label>
+										</div>
+										<div class="form-group">
+											<button type="submit" class="btn btn-success">Register Now</button>
+										</div>
+										<div class="text-center">Already have an account? <a href="#">Login</a></div>
+									</form>
+								</div>
+								
+							</div>
+						</div>
+						<div class="col-sm-3"></div>
+					</div>
+				</div>
+				<div class="footer">
+					<a href="#">
+						<strong>&copy;2018 Copyright:University.com</strong>
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>	
 </html>

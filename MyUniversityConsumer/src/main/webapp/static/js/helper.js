@@ -1,6 +1,5 @@
 //The first function called when the website is loaded
 $(document).ready(function() {
-	
 });
 
 /**
@@ -44,7 +43,7 @@ var runAjax = function(data, url, callback, isAsync, method, previousAjaxCalls, 
 
 	if (cache !== false || typeof (cache) === 'undefined' || cache === ''
 			|| cache === null) {
-		cache = true;
+		cache = false;
 	}
 	$.ajax({
 		type : method,

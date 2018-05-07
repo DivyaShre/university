@@ -1,0 +1,86 @@
+.sidebar, .content  { border: 1px solid blue; }
+ .sidebar, .footer {border-top:none;}
+.sidebar.right{border-right:none;}
+
+.header{
+	position:relative;
+	
+	height:190px;
+	box-shadow: 0px 0px 30px 0px #888888;
+	
+}
+
+#img1{
+	width:100%;
+	height:140px;
+}
+#img2{
+	height:600px;
+	position: relative;
+	width:100%;
+}
+.navbar-nav{
+	font-size:20px;
+	box-shadow: 0px 0px 30px 0px #888888;
+	
+	
+}
+#register:hover{
+	background-color:#ccc7c7;
+}
+#login:hover{
+	background-color:#ccc7c7;
+}
+#register{
+	background-color:#302f2f;
+	
+}
+#login{
+	background-color:#302f2f;
+}
+.content{
+	
+	width:100%;
+	height:relative;
+	
+	
+	box-shadow: 0px 0px 30px 0px #888888;
+	
+}
+
+.footer{
+	height:80px;
+	width:100%;
+	background-color:#333;
+	text-align:center;
+	padding-top:30px;
+	
+	box-shadow: 0px 0px 30px 0px #888888;
+
+}
+
+@media (min-width: 768px)
+{
+.navbar-nav {
+  
+    font-size: 8px;
+	
+}
+}
+@media (min-width: 900px)
+{
+.navbar-nav {
+   
+    font-size: 10px;
+	
+}
+}
+@media (min-width: 1100px)
+{
+.navbar-nav {
+    
+    font-size: 16.4px;
+	
+}
+
+}

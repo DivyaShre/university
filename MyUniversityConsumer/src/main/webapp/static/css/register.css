@@ -1,0 +1,23 @@
+.regheader{
+	text-align:center;
+	color:#756262;
+}
+.btn-success{
+		width:100%;
+}
+.j2{
+	background-color:#ebebe0;
+	margin-top:50px;
+	padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 15px;
+}
+.registerinfo{
+	display:none;
+}
+#email_msg{
+	color:red;
+}
+#pass_msg{
+	color:red;
+}

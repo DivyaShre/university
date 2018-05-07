@@ -8,7 +8,7 @@ public interface Constants {
 	String DEFAULT_PASSWORD = "admin";
 
 	String BASEURL = "http://";
-	String BASEURL_PORT = "8080";
+	String BASEURL_PORT = "8081";
 
 	String MEDIA_BASE_PATH = System.getProperty("user.home");
 	int HTTP_STATUS_CODE_SESSION_EXPIRED=10006;
