@@ -11,3 +11,9 @@ var METHOD_POST = "POST";
 
 // URLs
 var LOGIN_URL = APP_BASE_URL + UN + "/user/login";
+var REGISTER_URL = APP_BASE_URL + UN + "/user/register";
+var USERLIST_URL = APP_BASE_URL + UN + "/user/getAllUser";
+var DELETEUSER_URL = APP_BASE_URL + UN + "/user/delete";
+var EDITUSER_URL = APP_BASE_URL + UN + "/user/update";
+var FORGOTPASSWORD_URL = APP_BASE_URL + UN + "/user/forgotpassword";
+var LOGOUT_URL = APP_BASE_URL + UN + "/user/logout";

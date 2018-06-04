@@ -9,9 +9,20 @@
 		<!-- common css links --> 
 		<link rel="stylesheet" href="/UniversityConsumer/static/css/utilities.css"></link>
 		<link rel="stylesheet" href="/UniversityConsumer/static/css/login.css"></link>
-		<link rel="stylesheet" href="/UniversityConsumer/static/css/frontpage.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/FrontPage.css"></link>
 		<link rel="stylesheet" href="/UniversityConsumer/static/css/register.css"></link>
 		<link rel="stylesheet" href="/UniversityConsumer/static/css/toast.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/getalluser.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/UserDetailsById.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/EditUser.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/Edit.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/Forgot.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/UserProfile.css"></link>
+	
+
+		
+
+		
 		<!-- end common css links -->
 		
 		<!--  Javascripts Begin -->
@@ -20,7 +31,18 @@
 		<script src="/UniversityConsumer/static/js/helper.js"></script>
 		<script src="/UniversityConsumer/static/js/router.js"></script>
 		<script src="/UniversityConsumer/js/login.js"></script>
+		<script src="/UniversityConsumer/js/userlist.js"></script>
 		<script src="/UniversityConsumer/js/register.js"></script>
+		<script src="/UniversityConsumer/js/userlistbyid.js"></script>
+		<script src="/UniversityConsumer/js/edituser.js"></script>
+		<script src="/UniversityConsumer/js/deleteuser.js"></script>
+		<script src="/UniversityConsumer/js/logout.js"></script>
+		<script src="/UniversityConsumer/js/forgot.js"></script>
+		<script src="/UniversityConsumer/js/userprofile.js"></script>
+		
+		
+		
+
 		<!-- end Javascripts -->
 		
 		<meta charset="UTF-8">
@@ -39,6 +61,7 @@
   		</script>-->
   		
   		<!-- default hide and when we click login it should show and when we click cancel it should hide-->
+	
 	</head>
 	<body>
 	<!-- 		<h1>This is the welcome page</h1>
@@ -47,113 +70,247 @@
 			    <li><a href="UniversityConsumer/#/user/login">Login</a></li>
 			 </ul>
 		-->
-		<div id="view"> 
-			<div class="container">
-				<div class="header">
-					<div class="logo">
-						<a href="#">
-							<img src="UniversityConsumer/images/newheader1.jpg" id="img1" alt="VTU | Karnataka" title="VTU">
-						</a>
-					</div>
-					<nav class="navbar navbar-inverse">
-						<div class="container-fluid">
-							<ul class="nav navbar-nav">
-								<li class="active"><a href="http://localhost:8081/UniversityConsumer">HOME</a></li>
-								<li><a href="#">USERS</a></li>
-								
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								<li><button id="register">Register</button></li>
-								<li><button id="login">Login</button></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-					
-				<div class="content">
-					<img src="UniversityConsumer/images/university.jpg" id="img2" alt="VTU | Karnataka" title="university">
-					<div class="container">
-						<div class="col-sm-3"></div>
-						<div class="col-sm-6">
-							<div class="userinfo">
-								<div class="jumbotron j1">
-									<h3>login</h3>
-									<br>
-									<form>
-										<div class="form-group">
-											<input type="email" class="form-contrl" id="emailval" onblur="validateEmail()" placeholder="Enter email" required="required">
-											<span id="email_msg"></span>
-										</div>
-										<div class="form-group">
-											<input type="password" class="form-control" id="passval" onblur="validatePassword()" placeholder="password" required="required"> 
-											<span id="pass_msg"></span>
-										</div>
-										<label><input type="checkbox" checked="checked" name="remember" >Remember me </label>
-										<button type="submit" onclick="login(); return false;">Login</button>
-										<div class="container c1">
-											<button id="cancel" class="cancelbtn">Cancel</button>
-											<span class="psw"><a href="#">Forgot password?</a></span>
-										</div>
-									</form>
-								</div>
-							</div>
-				
-							<div class="registerinfo">
-								<div class="jumbotron j2">
-									<form>
-										<div class="regheader"><h2>Register</h2></div>
-										<div class="form-group">
-											<input type="text" class="form-control" id="firstName" onblur="validateFn()" name="first_name" placeholder="First Name" required="required">
-											<span id="fn_msg"></span>
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" name="middle_name" id="middleName" onblur="validateMn()" placeholder="Middle Name">
-											<span id="mn_msg"></span>
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" name="last_name" id="lastName" onblur="validateLn()" placeholder="Last Name" required="required">
-											<span id="ln_msg"></span>
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" name="email" id="regemailval" onblur="validateRegEmail()" placeholder="Email" required="required">
-											<span id="regemail_msg"></span>
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" name="password" id="regpassval" onblur="validateRegPassword()" placeholder="password" required="required">
-											<span id="regpass_msg"></span>
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" name="confirm_password" id="confpassval" onblur="validateConfPassword()" placeholder="confirm password" required="required">
-											<span id="confpass_msg"></span>
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" name="mobile_no" id="mobileNo" onblur="validateMobile()" placeholder="Mobile no" required="required">
-											<span id="mno_msg"></span>
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" name="alternate_mobile" id="altMobileNo" onblur="validateAlternateMobile()" placeholder="alternate mobile no">
-											<span id="ano_msg"></span>
-										</div>
-										<div class="form-group">
-											<label class="checkbox-inline"><input type="checkbox" required="required">I accept the <a href="#"> Terms of use</a> &amp; <a href="#">Privacy Policy</a></label>
-										</div>
-										<div class="form-group">
-											<button type="submit" class="btn btn-success">Register Now</button>
-										</div>
-										<div class="text-center">Already have an account? <a href="#">Login</a></div>
-									</form>
-								</div>
-								
-							</div>
-						</div>
-						<div class="col-sm-3"></div>
-					</div>
-				</div>
-				<div class="footer">
-					<a href="#">
-						<strong>&copy;2018 Copyright:University.com</strong>
+		<div class="container">
+			<div class="header">
+				<div class="logo">
+					<a href="/UniversityConsumer/">
+						<img src="UniversityConsumer/images/newheader1.jpg" id="img1" alt="VTU | Karnataka" title="VTU">
 					</a>
 				</div>
+				<nav class="navbar navbar-inverse">
+					<div class="container-fluid">
+						<ul class="nav navbar-nav" >
+							<li class="active"><a href="/UniversityConsumer/">HOME</a></li>
+							<li id= "getlist"><a href="/UniversityConsumer/"   onclick="GenerateTable();return false;">USERS</a></li>
+							
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><button id="register">Register</button></li>
+							<li><button id="login">Login</button></li>
+						</ul>
+						<div class="nav navbar-nav navbar-right">
+							<div class="dropdown" id="userlogo">
+							  <button class="btn btn primary"><span class="glyphicon glyphicon-user"></span>&nbsp;<span id="welcomeMessage"></span>&nbsp;<span class="caret"></span></button>
+							  <div class="dropdown-content">
+							  <a  id="userprofile" onclick="profile(); return false;">UserProfile</a>
+ 							  <a href="/UniversityConsumer/" id="logoutbtn" onclick="logout(); return false;">Logout</a>
+							  </div>
+							</div>
+			   			 </div>
+					</div>
+				</nav>
+			</div>
+				
+			<div class="content">
+				<img src="UniversityConsumer/images/university.jpg" id="img2" alt="VTU | Karnataka" title="university">
+				<div class="container">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-6">
+						<div class="userinfo">
+							<div class="jumbotron j1">
+								<h3>login</h3>
+								<br>
+								<form>
+									<div class="form-group">
+										<input type="email" class="form-contrl" id="emailval" onblur="validateEmail()" placeholder="Enter email" required="required">
+										<span id="email_msg"></span>
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" id="passval" onblur="validatePassword()" placeholder="password" required="required"> 
+										<span id="pass_msg"></span>
+									</div>
+									<label><input type="checkbox" checked="checked" name="remember" >Remember me </label>
+									<button type="submit" id="login1" onclick="login(); return false;">Login</button>
+									<div class="container c1">
+										<button id="cancel1" class="logincancelbtn">Cancel</button>
+										<span class="psw"><a  onclick="forgot(); return false;" id="forgotpass">Forgot password?</a></span>
+									</div>
+								</form>
+							</div>
+						</div>
+			
+						<div class="registerinfo">
+							<div class="jumbotron j2">
+								<form>
+									<div class="regheader"><h2>Register</h2></div>
+									<div class="form-group">
+										<input type="text" class="form-control" id="firstName" onblur="validateFn()" name="first_name" placeholder="First Name" required="required">
+										<span id="fn_msg"></span>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" name="middle_name" id="middleName" onblur="validateMn()" placeholder="Middle Name">
+										<span id="mn_msg"></span>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" name="last_name" id="lastName" onblur="validateLn()" placeholder="Last Name" required="required">
+										<span id="ln_msg"></span>
+									</div>
+									<div class="form-group" id="genderid"><b>Gender : </b>
+										<label class="radio-inline"><input type ="radio" name="gender" value="Male" required="required">Male</label>
+										<label class="radio-inline"><input type="radio" name="gender" value="Female">Female</label>
+									</div>
+									
+									<div class="form-group">
+										<input type="text" class="form-control" name="email" id="regemailval" onblur="validateRegEmail()" placeholder="Email" required="required">
+										<span id="regemail_msg"></span>
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" name="password" id="regpassval" onblur="validateRegPassword()" placeholder="password" required="required">
+										<span id="regpass_msg"></span>
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" name="confirm_password" id="confpassval" onblur="validateConfPassword()" placeholder="confirm password" required="required">
+										<span id="confpass_msg"></span>
+									</div>
+									<div class="form-group" id="typeid"><b>Type : </b>
+										<label class="radio-inline"><input type ="radio" name="type" value="1" required>Teacher</label>
+										<label class="radio-inline"><input type="radio" name="type" value="0">Student</label>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" name="mobile_no" id="mobileNo" onblur="validateMobile()" placeholder="Mobile no" required="required">
+										<span id="mno_msg"></span>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" name="alternate_mobile" id="altMobileNo" onblur="validateAlternateMobile()" placeholder="alternate mobile no">
+										<span id="ano_msg"></span>
+									</div>
+									
+									<div class="form-group">
+										<label class="checkbox-inline"><input type="checkbox" required="required">I accept the <a href="#"> Terms of use</a> &amp; <a href="#">Privacy Policy</a></label>
+									</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-success" onclick="register(); return false;" >Register Now</button>
+									</div>
+									<div class="container regcontainer">
+										<button id="cancel2" class="regcancelbtn">Cancel</button>
+									<span class="logintext">Already have an account? <a href="/UniversityConsumer/" onclick="loginreg(); return false;">Login</a></span>
+									</div>
+								</form>
+							</div>	
+						</div>
+					</div>
+				</div>
+				<div class="userlist">
+					<table id="listtable">
+					
+						<thead>
+							<tr>
+								<th id="hiddenidhead"> Id </th>
+								<th> Name </th>
+								<th> Type </th>
+								
+								<th> Action </th>
+								
+							
+							</tr>
+						</thead>
+						<tbody id="content"></tbody>
+					</table>
+				</div>
+				
+				<div class="edituserinfo">
+							<div class="jumbotron j3">
+								<form>
+									<div class="editheader"><h2>Edit User Details</h2></div>
+									<div class="form-group">
+										<input type="text" class="form-control" id="editFirstName" name="ufirst_name" placeholder="First Name">	
+										<span id="ufn_msg"></span>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" name="umiddle_name" id="editMiddleName"  placeholder="Middle Name">
+										<span id="umn_msg"></span>					
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" name="ulast_name" id="editLastName"  placeholder="Last Name">
+										<span id="uln_msg"></span>
+									</div>
+									<div class="form-group" id="editGenderId"><b>Gender : </b>
+										<label class="radio-inline"><input type ="radio"  name="gender" value="Male">Male</label>
+										<label class="radio-inline"><input type="radio"  name="gender" value="Female">Female</label>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" name="umobile_no" id="editMobileNo"  placeholder="Mobile no">	
+										<span id="umno_msg"></span>
+									</div>
+									<div class="form-group">
+										<input type="text" class="form-control" name="ualternate_mobile" id="editAltMobileNo" placeholder="alternate mobile no">
+										<span id="uano_msg"></span>
+									</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-success" onclick="editUpdate(); return false;" >Update</button>
+										<div><button id="cancel3" type="reset" class="updatecancelbtn">Cancel</button></div>
+									</div>
+								</form>
+							</div>	
+						</div>
+				
+				
+				<div class="userlistbyid">
+					<button class="btn btn-primary btn-xs editbtn2" title="Edit" data-toggle="modal" onclick="editUserid(); return false;" ><span class='glyphicon glyphicon-pencil'></span></button>
+					<h3>User Details</h3>
+					<div class="detailsinfo"></div>
+				</div>
+				
+				
+				
+				
+				<div class="container resetcontainer" id="passwordreset">
+					<div class="jumbotron j4">
+					<form>
+					<div class="forgotheader"><h2>Change Password</h2></div>
+					
+						<div class="form-group">
+							<input type="password" class="form-control" name="password" id="newpassval" onblur="validateNewPassword()" placeholder="New Password" required="required">
+							<span id="newpass_msg"></span>							
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" name="confirm_password" id="newconfpassval" onblur="validateConfNewPassword()" placeholder="Confirm Password" required="required">
+							<span id="confnewpass_msg"></span>							
+						</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-success" onclick="savepassword(); return false;" >Save</button>
+								<button id="cancel4" class="savecancelbtn">Cancel</button>							
+							</div>
+					</form>
+				</div>
+				</div>
+				 <div class="profile">
+					<h3>User Profile</h3>
+					<div class="container-fluid profilecontainer">
+						<div class="row-fluid">
+							
+							<div class="col-sm-1"></div>
+							<div class="col-sm-3">
+								<div class="container">
+								    <div class="picture-container">
+								        <div class="picture">
+								            <img src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" class="picture-src" id="wizardPicturePreview" title="">
+								            <input type="file" id="wizard-picture" class="">
+								        </div>
+								         <h6 class="">Choose Picture</h6>
+								    </div>
+								</div>	
+							</div>
+							<div class="col-sm-8" id="profilecolumn">	
+								<span id="profileusername"></span>
+								<div class="profdetails">
+									<span id="profileemailId"></span> 
+									<span id="profilemobile"></span> 
+									<span id="profilealtmobile"></span> 
+									<span id="profilegender"></span> 
+									<span id="profiletype"></span> 
+								</div>					
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-3"></div>
+			</div>
+			<div class="footer">
+				<a href="/UniversityConsumer/">
+					<strong>&copy;2018 Copyright:University.com</strong>
+				</a>
 			</div>
 		</div>
 	</body>	

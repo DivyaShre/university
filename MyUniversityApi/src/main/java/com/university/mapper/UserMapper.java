@@ -18,6 +18,7 @@ public class UserMapper {
 		userDto.setRoleId(user.getRoleId());
 		userDto.setType(user.getType());
 		userDto.setStatus(user.getStatus());
+		userDto.setGender(user.getGender());
 		return userDto;
 	}
 }

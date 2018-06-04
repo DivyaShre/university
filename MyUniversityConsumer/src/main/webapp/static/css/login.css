@@ -1,6 +1,6 @@
 input[type=text], input[type=password] {
     width: 100%;
-    padding: 12px 20px;
+    padding: 8px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -8,7 +8,7 @@ input[type=text], input[type=password] {
 }
 input[type=text], input[type=email] {
     width: 100%;
-    padding: 12px 20px;
+    padding: 8px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -43,7 +43,7 @@ h3 {
 .userinfo{
 	 display:none;
 }
-.cancelbtn {
+.logincancelbtn {
 	width:auto;
 	padding:6px 15px;
 	background-color:#d44335;
@@ -51,4 +51,10 @@ h3 {
 span.psw {
 	float: right;
 	padding-top:16px;
+}
+#email_msg{
+	color:red;
+}
+#pass_msg{
+	color:red;
 }

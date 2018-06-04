@@ -4,8 +4,8 @@ public interface Constants {
 	String NEWLINE = "\n";
 	String API_PATH = "/UniversityApi/";
 	String AUTH_PATH = "/UniversityAuth/";
-	String DEFAULT_USER = "admin";
-	String DEFAULT_PASSWORD = "admin";
+	String DEFAULT_USER = "admin@gmail.com";
+	String DEFAULT_PASSWORD = "welcome";
 
 	String BASEURL = "http://";
 	String BASEURL_PORT = "8081";

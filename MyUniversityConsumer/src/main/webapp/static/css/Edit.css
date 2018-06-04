@@ -1,0 +1,30 @@
+.editheader{
+	text-align:center;
+	color:#756262;
+}
+.useredit{
+	width:30%;
+}
+.userdelete{
+	width:30%;
+}
+.updatecancelbtn{
+	width:auto;
+	padding:6px 15px;
+	background-color:#d44335;
+}
+#ufn_msg{
+	color:red;
+}
+#umn_msg{
+	color:red;
+}
+#uln_msg{
+	color:red;
+}
+#umno_msg{
+	color:red;
+}
+#uano_msg{
+	color:red;
+}

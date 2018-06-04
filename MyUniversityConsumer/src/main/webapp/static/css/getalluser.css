@@ -1,0 +1,27 @@
+ .userlist{
+	display:none;
+}
+table {
+	 border: 1px solid black;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+    margin-top:10px;
+    margin-left:120px;
+    margin-bottom:10px;
+}
+
+td, th {
+     border: 1px solid black;
+    text-align: center;
+     padding: 8px;
+}
+#view{
+	background-color:silver;
+	width:60%;
+	radius:1px;
+	
+}
+#hiddenidhead, #hiddenid{
+	visibility:hidden;
+}

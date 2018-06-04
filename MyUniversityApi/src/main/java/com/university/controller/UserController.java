@@ -12,6 +12,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,7 +35,7 @@ public class UserController
 	private static final String LOGIN_FAILURE_CODE="loginerrorcode";
 	private static final String LOGIN_FAILURE_MSG="loginerrormsg";
 	// to save a new user details to the database
-	private static final String SAVE = "/save";
+	private static final String REGISTER = "/register";
 	private static final String SAVE_FAILURE_CODE="saveerrorcode";
 	private static final String SAVE_FAILURE_MSG="saveerrormsg";
 	// to update existing user information
@@ -45,9 +46,14 @@ public class UserController
 	private static final String DELETE = "/delete";
 	private static final String DELETE_FAILURE_CODE = "deleteerrorcode";
 	private static final String DELETE_FAILURE_MSG = "deleteerrormsg";
-	private static final String GET = "/get";
+	private static final String GETALLUSER = "/getAllUser";
 	private static final String GET_FAILURE_CODE = "geterrorcode";
 	private static final String GET_FAILURE_MSG = "geterrormsg";
+	private static final String GETUSERDETAILS = "/getAllUser/{id}";
+	
+	private static final String FORGOTPASSWORD = "/forgotpassword";
+	private static final String PASSWORD_SAVE_FAILURE_CODE = "passworderrorcode";
+	private static final String PASSWORD_SAVE_FAILURE_MSG = "passworderrormsg";
 	
 		
 	// @Autowired is used to get control over where and how autowired should be accomplished
@@ -98,13 +104,13 @@ public class UserController
 			}
 	}
 	/**
-	 * saving
+	 * register
 	 * @param user
 	 * @param request
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping(value = SAVE, method = RequestMethod.POST)
+	@RequestMapping(value = REGISTER, method = RequestMethod.POST)
 	public ResponseEntity<Map<String, Object>> saveUserDetails(@RequestBody UserDto user,HttpServletRequest request, HttpServletResponse response)
 	{
 		log.info("Inside saveUserDetails");
@@ -132,6 +138,42 @@ public class UserController
 				}		
 	}
 	/**
+	 * Forgot Password
+	 * @param user
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = FORGOTPASSWORD, method = RequestMethod.POST)
+	public ResponseEntity<Map<String, Object>> saveNewPassword(@RequestBody UserDto user,HttpServletRequest request, HttpServletResponse response)
+	{
+		log.info("Inside saveNewPassword");
+		try{
+			Map<String, Object> responseObj = new LinkedHashMap<String, Object>();
+			long savedPassword = userService.saveNewPassword(user);
+			if(savedPassword > 0){
+			responseObj.put("savedPassword", savedPassword);
+			log.info("save success");
+			return new ResponseEntity<Map<String, Object>>(responseObj, HttpStatus.OK);
+		}else{
+			log.info(env.containsProperty(PASSWORD_SAVE_FAILURE_MSG));
+			throw new UNException(env.getProperty(PASSWORD_SAVE_FAILURE_CODE), env.getProperty(PASSWORD_SAVE_FAILURE_MSG), Constants.EMPTY_STRING);
+			
+		}
+	}catch (UNException un) 
+			{
+				log.info(env.getProperty(PASSWORD_SAVE_FAILURE_MSG));
+				throw new UNException(un.getErrCode(),un.getErrMsg(),Constants.EMPTY_STRING);
+			}
+			catch (Exception e)
+			{
+				log.info(env.getProperty(PASSWORD_SAVE_FAILURE_MSG));
+				throw new UNException(env.getProperty(PASSWORD_SAVE_FAILURE_CODE),env.getProperty(PASSWORD_SAVE_FAILURE_MSG),Constants.EMPTY_STRING);
+			}		
+}
+
+	
+	/**
 	 * Update a user
 	 * @param user
 	 * @param request
@@ -156,7 +198,7 @@ public class UserController
 				}
 			}catch (UNException un){
 				log.info(env.getProperty(UPDATE_FAILURE_MSG));
-				throw new UNException(env.getProperty(UPDATE_FAILURE_CODE),env.getProperty(UPDATE_FAILURE_MSG),Constants.EMPTY_STRING);
+				throw new UNException(un.getErrCode(),un.getErrMsg(),Constants.EMPTY_STRING);
 			}catch (Exception e){
 					log.info(env.getProperty(UPDATE_FAILURE_MSG));
 					throw new UNException(env.getProperty(UPDATE_FAILURE_CODE),env.getProperty(UPDATE_FAILURE_MSG),Constants.EMPTY_STRING);
@@ -186,7 +228,7 @@ public class UserController
 				}
 			}catch (UNException un){
 			 		log.info(env.getProperty(DELETE_FAILURE_MSG));
-			 		throw new UNException(env.getProperty(DELETE_FAILURE_CODE),env.getProperty(DELETE_FAILURE_MSG),Constants.EMPTY_STRING);
+			 		throw new UNException(un.getErrCode(),un.getErrMsg(),Constants.EMPTY_STRING);
 			 	}catch (Exception e){
 					log.info(env.getProperty(DELETE_FAILURE_MSG));
 					throw new UNException(env.getProperty(DELETE_FAILURE_CODE),env.getProperty(DELETE_FAILURE_MSG),Constants.EMPTY_STRING);
@@ -196,7 +238,7 @@ public class UserController
 	 * get users list
 	 * @return
 	 */
-	@RequestMapping(value = GET, method = RequestMethod.GET)
+	@RequestMapping(value = GETALLUSER, method = RequestMethod.GET)
 	public ResponseEntity<Map<String, Object>>gettingUserDetails()
 	{
 		log.info("Inside gettingUserDetails");
@@ -214,22 +256,44 @@ public class UserController
 	 				}
 			 }catch (UNException un){
 	 			log.info(env.getProperty(GET_FAILURE_MSG));
+	 			throw new UNException(un.getErrCode(),un.getErrMsg(),Constants.EMPTY_STRING);
+	 		 }catch (Exception e){
+	 			log.info(env.getProperty(GET_FAILURE_MSG));
 	 			throw new UNException(env.getProperty(GET_FAILURE_CODE),env.getProperty(GET_FAILURE_MSG),Constants.EMPTY_STRING);
+	 		}	
+	}
+	
+	/**
+	 * Get user details
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value = GETUSERDETAILS, method = RequestMethod.GET)
+	public ResponseEntity<Map<String, Object>>getDetailsById(@PathVariable String id)
+	{
+		
+		log.info("Inside gettingUserDetailsById");
+		try{	
+				long user_id = Long.parseLong(id); 
+				Map<String, Object> responseObj = new LinkedHashMap<String, Object>();
+				UserDto createdUserDetailsById = userService.getDetailsById(user_id);
+			 	if(createdUserDetailsById != null)
+			 	{
+			 		responseObj.put("CreatedUserDetailsById", createdUserDetailsById);
+			 		log.info("Get success");
+			 		return new ResponseEntity<Map<String, Object>>(responseObj, HttpStatus.OK);
+	 			}else{
+	 					log.info(env.containsProperty(GET_FAILURE_MSG));
+	 					throw new UNException(env.getProperty(GET_FAILURE_CODE), env.getProperty(GET_FAILURE_MSG), Constants.EMPTY_STRING);
+	 				}
+			 }catch (UNException un){
+	 			log.info(env.getProperty(GET_FAILURE_MSG));
+	 			throw new UNException(un.getErrCode(),un.getErrMsg(),Constants.EMPTY_STRING);
 	 		 }catch (Exception e){
 	 			log.info(env.getProperty(GET_FAILURE_MSG));
 	 			throw new UNException(env.getProperty(GET_FAILURE_CODE),env.getProperty(GET_FAILURE_MSG),Constants.EMPTY_STRING);
 	 		}	
 	}
 
-	@ExceptionHandler(UNException.class)
-	//showing error code and message in ErrorDTO class
-	public ResponseEntity<ErrorDTO> exceptionHandeler(HttpServletRequest req, UNException exception)
-	{
-		ErrorDTO errorJson = new ErrorDTO();
-		errorJson.setErrorCode(exception.getErrCode());
-		errorJson.setErrorMessage(exception.getErrMsg());
-		errorJson.setDescription(exception.getDescription());
-		log.error(exception);
-		return new ResponseEntity<ErrorDTO>(errorJson, HttpStatus.INTERNAL_SERVER_ERROR);
-	}
+	
 }

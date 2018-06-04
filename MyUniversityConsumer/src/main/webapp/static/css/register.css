@@ -15,9 +15,38 @@
 .registerinfo{
 	display:none;
 }
-#email_msg{
+b{
+	font-size: 15px;
+}
+.regcancelbtn {
+	width:auto;
+	padding:6px 15px;
+	background-color:#d44335;
+}
+.logintext{
+	margin-left:30px;
+}
+#fn_msg{
 	color:red;
 }
-#pass_msg{
+#mn_msg{
+	color:red;
+}
+#ln_msg{
+	color:red;
+}
+#regemail_msg{
+	color:red;
+}
+#regpass_msg{
+	color:red;
+}
+#confpass_msg{
+	color:red;
+}
+#mno_msg{
+	color:red;
+}
+#ano_msg{
 	color:red;
 }

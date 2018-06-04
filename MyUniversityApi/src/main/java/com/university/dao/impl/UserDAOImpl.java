@@ -48,64 +48,48 @@ public class UserDAOImpl implements UserDAO {
 	}
 	
 	@Override
-	public int updateUserDetails(long id,String fname, String mobileNo,String alternateMobile) {
-		Session session = sessionFactory.getCurrentSession();
-		if(fname != null && mobileNo!= null && alternateMobile!= null)
-		{
-			Query query = session.createQuery("update UserEntity set fname= :f, mobileNO= :m, alternateMobile= :am where id= :i");
-			query.setParameter("f",fname);
-			query.setParameter("m",mobileNo);
-			query.setParameter("am",alternateMobile);
-			query.setParameter("i",id);
-			return query.executeUpdate();
-		}
-		if(fname != null && mobileNo!= null && alternateMobile== null)
-		{
-			Query query = session.createQuery("update UserEntity set fname= :f, mobileNO= :m where id= :i");
-			query.setParameter("f",fname);
-			query.setParameter("m",mobileNo);
-			query.setParameter("i",id);
-			return query.executeUpdate();
-		}
-		if(fname != null && mobileNo== null && alternateMobile!= null)
-		{
-			Query query = session.createQuery("update UserEntity set fname= :f, alternateMobile= :am where id= :i");
-			query.setParameter("f",fname);
-			query.setParameter("am",alternateMobile);
-			query.setParameter("i",id);
-			return query.executeUpdate();
-		}
+	public long saveNewPassword(UserEntity user) {
 		
-		if(fname == null && mobileNo!= null && alternateMobile!= null)
-		{
-			Query query = session.createQuery("update UserEntity set mobileNO= :m, alternateMobile= :am where id= :i");
-			query.setParameter("m",mobileNo);
-			query.setParameter("am",alternateMobile);
-			query.setParameter("i",id);
-			return query.executeUpdate();
-		}
+		Session session = sessionFactory.getCurrentSession();
+		return (long) session.save(user);
+	}
+
+	
+	@Override
+	public int updateUserDetails(long id,String fname,String mname,String lname, String mobileNo,String alternateMobile, String gender) {
+		Session session = sessionFactory.getCurrentSession();
+		Criterion idCri = Restrictions.eq("id", id);
+		Criteria cri = session.createCriteria(UserEntity.class).add(idCri);
+		UserEntity user = (UserEntity) cri.uniqueResult();
 		if(fname != null)
 		{
-			Query query = session.createQuery("update UserEntity set fname= :f where id= :i");
-			query.setParameter("f",fname);
-			query.setParameter("i",id);
-			return query.executeUpdate();
+			user.setFname(fname);
 		}
-		if( mobileNo!= null )
+		if(mname != null)
 		{
-			Query query = session.createQuery("update UserEntity set mobileNO= :m where id= :i");
-			query.setParameter("m",mobileNo);
-			query.setParameter("i",id);
-			return query.executeUpdate();
+			user.setMname(mname);
 		}
+		if(lname != null)
+		{
+			user.setLname(lname);
+		}
+		
+		if(mobileNo!= null)
+		{
+			user.setMobileNo(mobileNo);
+		}
+		
 		if(alternateMobile!= null)
 		{
-			Query query = session.createQuery("update UserEntity set alternateMobile= :am where id= :i");
-			query.setParameter("am",alternateMobile);
-			query.setParameter("i",id);
-			return query.executeUpdate();
+			user.setAlternateMobile(alternateMobile);
+
 		}
-		return 0;
+		if(gender!=null)
+		{
+			user.setGender(gender);
+		}
+		session.update(user);
+		return 1;
 		
 	}
 	@Override
@@ -130,13 +114,18 @@ public class UserDAOImpl implements UserDAO {
 	
 		
 	@Override
-	public List<UserEntity> gettingUserDetails()
+	public List<UserEntity> gettingUserDetails(int status)
 	{
 		Session session = sessionFactory.getCurrentSession();
 		// select * from user
-		Criteria cri = session.createCriteria(UserEntity.class);
+		Criterion statusCri = Restrictions.eq("status", status); // to get only active users
+		Criterion emailCri = Restrictions.ne("emailId", "admin@gmail.com");
+		Criteria cri = session.createCriteria(UserEntity.class).add(statusCri).add(emailCri);
 		return cri.list();
 	}
+
+	
+	
 
 	
 }

@@ -13,7 +13,14 @@ public class UserDto {
 	private int type;
 	private long roleId;
 	private int status;
+	private String gender;
 	
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	public long getId() {
 		return id;
 	}

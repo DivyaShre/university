@@ -34,7 +34,7 @@ public interface UserService {
 	 * @return
 	 */
 
-	int deleteUserDetails(UserDto user);
+	int deleteUserDetails(UserDto userDto);
 
 	/**
 	 * 
@@ -42,5 +42,23 @@ public interface UserService {
 	 */
 
 	List<UserDto> gettingUserDetails();
+	
+
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+
+	UserDto getDetailsById(long id);
+	
+	/**
+	 * 
+	 * @param user
+	 * @return
+	 */
+
+	long saveNewPassword(UserDto user);
+	
 	
 }

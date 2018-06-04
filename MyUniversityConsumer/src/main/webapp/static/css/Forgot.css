@@ -1,0 +1,33 @@
+#passwordreset{
+	display:none;
+}
+.forgotheader{
+	text-align:center;
+	color:#756262;
+}
+.j4{
+	background-color:#ebebe0;
+	margin-top:50px;
+	margin-left:200px;
+	padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 15px;
+    width:60%;
+}
+.savecancelbtn {
+	width:auto;
+	padding:6px 15px;
+	background-color:#d44335;
+}
+#resetpass_msg{
+	color:red;
+}
+#resetconfpass_msg{
+	color:red;
+}
+#newpass_msg{
+	color:red;
+}
+#confnewpass_msg{
+	color:red;
+}

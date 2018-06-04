@@ -29,6 +29,7 @@ public class UserEntity {
 	private Date createdTS;
 	private long updatedBy;
 	private Date updatedTS;
+	private String gender;
 	
 	public long getId() {
 		return id;
@@ -119,5 +120,11 @@ public class UserEntity {
 	}
 	public void setUpdatedTimestamp(Date updatedTS) {
 		this.updatedTS = updatedTS;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 }

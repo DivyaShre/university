@@ -121,6 +121,7 @@ public class UserServiceImpl implements UserService {
 			if(existingUser == null)
 			{
 				UserEntity user = new UserEntity();
+				user.setEmailId(userDto.getEmailId());
 				user.setFname(userDto.getFname());
 				user.setMname(userDto.getMname());
 				user.setLname(userDto.getLname());
@@ -128,9 +129,9 @@ public class UserServiceImpl implements UserService {
 				user.setMobileNo(userDto.getMobileNo());
 				user.setAlternateMobile(userDto.getAlternateMobile());
 				user.setType(userDto.getType());
-				user.setRoleId(userDto.getRoleId());
+				user.setRoleId(1);
 				user.setStatus(Constants.ACTIVE);
-				user.setEmailId(userDto.getEmailId());
+				user.setGender(userDto.getGender());
 				user.setCreatedBy(1);
 				user.setCreatedTimestamp(new Date());
 				long createdUserId = userDao.saveUserDetails(user);
@@ -164,7 +165,7 @@ public class UserServiceImpl implements UserService {
 		
 		if(user.getId()>0)
 		{
-			int updatedUser = userDao.updateUserDetails(user.getId(), user.getFname(), user.getMobileNo(), user.getAlternateMobile());
+			int updatedUser = userDao.updateUserDetails(user.getId(), user.getFname(), user.getMname(),user.getLname(), user.getMobileNo(), user.getAlternateMobile(), user.getGender());
 			return updatedUser;
 		}else{
 				throw new UNException(env.getProperty(UPDATE_ERROR_CODE), env.getProperty(UPDATE_ERROR_MSG),Constants.EMPTY_STRING);
@@ -192,11 +193,51 @@ public class UserServiceImpl implements UserService {
 	public List<UserDto> gettingUserDetails() 
 	{
 		List<UserDto> userDtoList = new ArrayList<UserDto>();
-		List<UserEntity> list= userDao.gettingUserDetails();
+		List<UserEntity> list= userDao.gettingUserDetails(Constants.ACTIVE); //get only active users
 		for(UserEntity user: list )
 		{
 			userDtoList.add((UserMapper.convertUserEntityToDto(user)));
 		}
 		return userDtoList;
 	}
+	@Override
+	@Transactional
+	public UserDto getDetailsById(long id) {
+		UserEntity list= userDao.getUserDetailsById(id);
+		if(list!=null){
+		return UserMapper.convertUserEntityToDto(list);
+		}else{
+			throw new UNException(env.getProperty(INVALID_USER_ERROR_CODE), env.getProperty(INVALID_USER_ERROR_MSG),Constants.EMPTY_STRING);
+			}
+
+	}
+	@Override
+	@Transactional
+	public long saveNewPassword(UserDto userDto) {
+		if(userDto!=null)
+		{			
+			if(StringUtils.isBlank(userDto.getEmailId()))
+			{
+				throw new UNException(env.getProperty(EMAIL_ID_NULL_EMPTY_ERROR_CODE), env.getProperty(EMAIL_ID_NULL_EMPTY_ERROR_MSG),Constants.EMPTY_STRING);
+			}
+			if(!Pattern.matches(Constants.EMAIL_PATTERN, userDto.getEmailId())){
+				throw new UNException(env.getProperty(EMAIL_ERROR_CODE), env.getProperty(EMAIL_ERROR_MSG),Constants.EMPTY_STRING);
+			}
+		
+		}else{
+			throw new UNException(env.getProperty(INVALID_INPUT_ERROR_CODE), env.getProperty(INVALID_INPUT_ERROR_MSG),Constants.EMPTY_STRING);
+		}
+		UserEntity existingUser = userDao.getUserDetailsByEmailId(userDto.getEmailId());
+		if(existingUser != null)
+		{
+			existingUser.setPassword(userDto.getPassword());
+			long savedPassword = userDao.saveUserDetails(existingUser);
+			return savedPassword;
+		}else{
+			throw new UNException(env.getProperty(USER_ALREADY_EXISTS_ERROR_CODE), env.getProperty(USER_ALREADY_EXISTS_ERROR_MSG),Constants.EMPTY_STRING);
+		}
+		
+	}
+	
+	
 }

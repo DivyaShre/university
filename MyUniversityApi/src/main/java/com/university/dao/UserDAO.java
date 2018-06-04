@@ -38,7 +38,7 @@ public interface UserDAO {
 	 * @return
 	 */
 
-	int updateUserDetails(long id, String fname, String mobileNo, String alternateMobile);
+	int updateUserDetails(long id,String fname,String mname,String lname, String mobileNo,String alternateMobile, String gender);
 
 	
 	/**
@@ -57,10 +57,20 @@ public interface UserDAO {
 
 	int deleteUserDetails(int status, long id);
 
+	
+	
 	/**
 	 * 
+	 * @param status
 	 * @return
 	 */
-	List<UserEntity> gettingUserDetails();
+	List<UserEntity> gettingUserDetails(int status);
+	
+	/**
+	 * 
+	 * @param user
+	 * @return
+	 */
+	long saveNewPassword(UserEntity user);
 
 }
