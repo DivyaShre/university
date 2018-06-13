@@ -15,5 +15,7 @@ public interface Constants {
 	public static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,6})$";
 	public static final String MOBILE_NO_PATTERN ="^[7-9]{1}[0-9]{9}$";
 	
+	String BASE_PATH = System.getProperty("user.home");
+	
 }
  

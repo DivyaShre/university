@@ -60,5 +60,13 @@ public interface UserService {
 
 	long saveNewPassword(UserDto user);
 	
+	/**
+	 * Update ImageUrl
+	 * @param userId
+	 * @param imageUrl
+	 * @return
+	 */
+	boolean updateImageUrl(long userId, String imageUrl);
+	
 	
 }

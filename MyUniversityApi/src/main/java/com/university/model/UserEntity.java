@@ -1,6 +1,5 @@
 package com.university.model;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -24,6 +23,7 @@ public class UserEntity {
 	private String password;
 	private int type;
 	private long roleId;
+	private String imageUrl;
 	private int status;
 	private long createdBy;
 	private Date createdTS;
@@ -90,6 +90,12 @@ public class UserEntity {
 	}
 	public void setRoleId(long roleId) {
 		this.roleId = roleId;
+	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 	public int getStatus() {
 		return status;

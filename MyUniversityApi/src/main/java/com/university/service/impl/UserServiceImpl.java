@@ -239,5 +239,16 @@ public class UserServiceImpl implements UserService {
 		
 	}
 	
+	@Override
+	@Transactional
+	public boolean updateImageUrl(long userId, String imageUrl) {
+		UserEntity user = userDao.getUserDetailsById(userId);
+		user.setImageUrl(imageUrl);
+		long id = userDao.saveUserDetails(user);
+		if(id>0)
+			return true;
+		else
+			return false;
+	}
 	
 }

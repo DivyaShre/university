@@ -9,7 +9,7 @@
 		<!-- common css links --> 
 		<link rel="stylesheet" href="/UniversityConsumer/static/css/utilities.css"></link>
 		<link rel="stylesheet" href="/UniversityConsumer/static/css/login.css"></link>
-		<link rel="stylesheet" href="/UniversityConsumer/static/css/FrontPage.css"></link>
+		<link rel="stylesheet" href="/UniversityConsumer/static/css/frontpage.css"></link>
 		<link rel="stylesheet" href="/UniversityConsumer/static/css/register.css"></link>
 		<link rel="stylesheet" href="/UniversityConsumer/static/css/toast.css"></link>
 		<link rel="stylesheet" href="/UniversityConsumer/static/css/getalluser.css"></link>
@@ -92,7 +92,7 @@
 							<div class="dropdown" id="userlogo">
 							  <button class="btn btn primary"><span class="glyphicon glyphicon-user"></span>&nbsp;<span id="welcomeMessage"></span>&nbsp;<span class="caret"></span></button>
 							  <div class="dropdown-content">
-							  <a  id="userprofile" onclick="profile(); return false;">UserProfile</a>
+							  <a  id="userprofile" >UserProfile</a>
  							  <a href="/UniversityConsumer/" id="logoutbtn" onclick="logout(); return false;">Logout</a>
 							  </div>
 							</div>
@@ -284,8 +284,8 @@
 								<div class="container">
 								    <div class="picture-container">
 								        <div class="picture">
-								            <img src="https://lh3.googleusercontent.com/LfmMVU71g-HKXTCP_QWlDOemmWg4Dn1rJjxeEsZKMNaQprgunDTtEuzmcwUBgupKQVTuP0vczT9bH32ywaF7h68mF-osUSBAeM6MxyhvJhG6HKZMTYjgEv3WkWCfLB7czfODidNQPdja99HMb4qhCY1uFS8X0OQOVGeuhdHy8ln7eyr-6MnkCcy64wl6S_S6ep9j7aJIIopZ9wxk7Iqm-gFjmBtg6KJVkBD0IA6BnS-XlIVpbqL5LYi62elCrbDgiaD6Oe8uluucbYeL1i9kgr4c1b_NBSNe6zFwj7vrju4Zdbax-GPHmiuirf2h86eKdRl7A5h8PXGrCDNIYMID-J7_KuHKqaM-I7W5yI00QDpG9x5q5xOQMgCy1bbu3St1paqt9KHrvNS_SCx-QJgBTOIWW6T0DHVlvV_9YF5UZpN7aV5a79xvN1Gdrc7spvSs82v6gta8AJHCgzNSWQw5QUR8EN_-cTPF6S-vifLa2KtRdRAV7q-CQvhMrbBCaEYY73bQcPZFd9XE7HIbHXwXYA=s200-no" class="picture-src" id="wizardPicturePreview" title="">
-								            <input type="file" id="wizard-picture" class="">
+								            <img src="http://localhost:8080/UniversityApi/download/profilepicture?fileName=university/profilePicture/1/set-of-sun-icons-cartoon-style-Download-Royalty-free-Vector-File-EPS-177466.jpg" class="picture-src" id="profilePic" />
+								            <input type="file" id="profilePicture" class="">
 								        </div>
 								         <h6 class="">Choose Picture</h6>
 								    </div>

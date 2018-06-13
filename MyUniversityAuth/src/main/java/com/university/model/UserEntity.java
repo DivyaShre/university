@@ -23,11 +23,13 @@ public class UserEntity {
 	private String password;
 	private int type;
 	private long roleId;
+	private String imageUrl;
 	private int status;
 	private long createdBy;
 	private Timestamp createdTS;
 	private long updatedBy;
 	private Timestamp updatedTS;
+	private String gender;
 	
 	public long getId() {
 		return id;
@@ -89,6 +91,12 @@ public class UserEntity {
 	public void setRoleId(long roleId) {
 		this.roleId = roleId;
 	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 	public int getStatus() {
 		return status;
 	}
@@ -118,6 +126,12 @@ public class UserEntity {
 	}
 	public void setUpdatedTimestamp(Timestamp updatedTS) {
 		this.updatedTS = updatedTS;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	
 }

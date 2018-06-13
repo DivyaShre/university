@@ -17,3 +17,5 @@ var DELETEUSER_URL = APP_BASE_URL + UN + "/user/delete";
 var EDITUSER_URL = APP_BASE_URL + UN + "/user/update";
 var FORGOTPASSWORD_URL = APP_BASE_URL + UN + "/user/forgotpassword";
 var LOGOUT_URL = APP_BASE_URL + UN + "/user/logout";
+var UPLOAD_PIC = API_BASE_URL + "upload/userprofilepic";
+var DOWNLOAD_PIC = API_BASE_URL + "download/"; 

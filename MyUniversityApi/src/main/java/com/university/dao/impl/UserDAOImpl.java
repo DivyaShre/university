@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
 
 import com.university.dao.UserDAO;
 import com.university.model.UserEntity;
-import com.university.utility.Constants;
 
 @Repository
 public class UserDAOImpl implements UserDAO {

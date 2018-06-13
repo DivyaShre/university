@@ -3,6 +3,7 @@ package com.university.controller;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -293,6 +294,18 @@ public class UserController
 	 			log.info(env.getProperty(GET_FAILURE_MSG));
 	 			throw new UNException(env.getProperty(GET_FAILURE_CODE),env.getProperty(GET_FAILURE_MSG),Constants.EMPTY_STRING);
 	 		}	
+	}
+	
+	@ExceptionHandler(UNException.class)
+	public ResponseEntity<ErrorDTO> exceptionHandeler(HttpServletRequest req, UNException exception) {
+
+		ErrorDTO errorJson = new ErrorDTO();
+		errorJson.setErrorCode(exception.getErrCode());
+		errorJson.setErrorMessage(exception.getErrMsg());
+		errorJson.setDescription(exception.getDescription());
+		log.error(exception);
+
+		return new ResponseEntity<ErrorDTO>(errorJson, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
 	
